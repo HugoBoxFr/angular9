@@ -1,0 +1,26 @@
+<div [style.backgroundColor]="color">
+    Event Binding
+</div>
+
+<input #inputColor (change)="changeColor(inputColor)" type="text" class="form-control" />
+
+<hr />
+
+<div [style.backgroundColor]="color2">
+    <!-- Two way data binding -->
+    <br>color {{ color2 }}
+</div>
+
+<input [(ngModel)]="color2" 
+    type="text" 
+    class="form-control" />
+
+<hr />
+
+<p>interaction pere fils</p>
+<app-fils 
+    [filsProperty]="color2"
+    (sendRequestToData)="processReq($event)"
+></app-fils>
+
+<button class="btn btn-primary" (click)="gotToCV()">Go to CV</button>

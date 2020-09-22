@@ -14,6 +14,14 @@ import { HightlightDirective } from './directive/hightlight.directive';
 import { RainbowDirective } from './directive/rainbow.directive';
 import { DefaultImagePipe } from './components/default-image.pipe';
 import { EmbaucheComponent } from './components/embauche/embauche.component';
+import { HeaderComponent } from './header/header.component';
+import { ColorComponent } from './components/color/color.component';
+import { FilsComponent } from './fils/fils.component';
+import { RouterSimulatorComponent } from './components/router-simulator/router-simulator.component';
+import { DetailComponent } from './components/detail/detail.component';
+import { AddCvComponent } from './components/add-cv/add-cv.component';
+import { DeleteCvComponent } from './components/delete-cv/delete-cv.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +35,15 @@ import { EmbaucheComponent } from './components/embauche/embauche.component';
     HightlightDirective,
     RainbowDirective,
     DefaultImagePipe,
-    EmbaucheComponent
+    EmbaucheComponent,
+    HeaderComponent,
+    ColorComponent,
+    FilsComponent,
+    RouterSimulatorComponent,
+    DetailComponent,
+    AddCvComponent,
+    DeleteCvComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
