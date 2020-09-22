@@ -22,6 +22,8 @@ import { DetailComponent } from './components/detail/detail.component';
 import { AddCvComponent } from './components/add-cv/add-cv.component';
 import { DeleteCvComponent } from './components/delete-cv/delete-cv.component';
 import { ErrorComponent } from './components/error/error.component';
+import { LoginComponent } from './login/login.component';
+import { ObservableComponent } from './components/observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { ErrorComponent } from './components/error/error.component';
     DetailComponent,
     AddCvComponent,
     DeleteCvComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,

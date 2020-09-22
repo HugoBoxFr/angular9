@@ -27,4 +27,10 @@ export class CvService {
 
     return personne;
   }
+
+  addPersonne(personne: Personne): void {
+    console.log(personne);
+    personne.id = this.personnes[this.personnes.length - 1].id + 1;
+    this.personnes.push(personne);
+  }
 }

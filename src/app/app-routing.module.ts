@@ -6,19 +6,22 @@ import { CvComponent } from './components/cv/cv.component';
 import { DeleteCvComponent } from './components/delete-cv/delete-cv.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { ErrorComponent } from './components/error/error.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
   // { path:'cv/:id', component: DetailComponent },
   // { path:'cv', redirectTo: '/', pathMatch: 'full' },
 
-  { path:'cv', component: CvComponent, children: [
+  { path:'cv', children: [
+    { path:'', component: CvComponent },
     { path:'delete/:id', component: DeleteCvComponent },
     { path:'add', component: AddCvComponent },
     { path:':id', component: DetailComponent },
   ] },
   { path:'', component: CvComponent },
   { path: 'color/:default', component: ColorComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: ErrorComponent }
 ];
 
