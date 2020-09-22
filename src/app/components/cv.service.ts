@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Personne } from '../models/personne';
 
 @Injectable({
@@ -6,8 +8,11 @@ import { Personne } from '../models/personne';
 })
 export class CvService {
   private personnes: Personne[];
+  uri = 'http://localhost:3000/api/personnes';
 
-  constructor() { 
+  constructor(
+    private http: HttpClient
+  ) { 
     this.personnes = [
       new Personne(1, "prea", "hugo", 37, "moi.png", 777, "développeur web"),
       new Personne(2, "pnth", "thomas", 27, "thomas.jpg", 222, "formateur"),
@@ -16,7 +21,11 @@ export class CvService {
     ];
   }
 
-  getPersonnes(): Personne[] {
+  getPersonnes(): Observable<Personne[]> {
+    return this.http.get<Personne[]>(this.uri);
+  }
+
+  getFakePersonnes(): Personne[] {
     return this.personnes;
   }
 
