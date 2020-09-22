@@ -24,6 +24,8 @@ import { DeleteCvComponent } from './components/delete-cv/delete-cv.component';
 import { ErrorComponent } from './components/error/error.component';
 import { LoginComponent } from './login/login.component';
 import { ObservableComponent } from './components/observable/observable.component';
+import { HttpComponent } from './components/http/http.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -47,12 +49,14 @@ import { ObservableComponent } from './components/observable/observable.componen
     DeleteCvComponent,
     ErrorComponent,
     LoginComponent,
-    ObservableComponent
+    ObservableComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
