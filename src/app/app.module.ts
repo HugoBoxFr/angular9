@@ -20,7 +20,6 @@ import { FilsComponent } from './fils/fils.component';
 import { RouterSimulatorComponent } from './components/router-simulator/router-simulator.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { AddCvComponent } from './components/add-cv/add-cv.component';
-import { DeleteCvComponent } from './components/delete-cv/delete-cv.component';
 import { ErrorComponent } from './components/error/error.component';
 import { LoginComponent } from './login/login.component';
 import { ObservableComponent } from './components/observable/observable.component';
@@ -29,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginInterceptorProvider } from './interceptors/login.interceptor';
 import { LoginGuard } from './guards/login.guard';
 import { LougoutGuard } from './guards/logout.guard';
+import { UpdateCvComponent } from './components/update-cv/update-cv.component';
 
 @NgModule({
   declarations: [
@@ -49,11 +49,11 @@ import { LougoutGuard } from './guards/logout.guard';
     RouterSimulatorComponent,
     DetailComponent,
     AddCvComponent,
-    DeleteCvComponent,
     ErrorComponent,
     LoginComponent,
     ObservableComponent,
-    HttpComponent
+    HttpComponent,
+    UpdateCvComponent
   ],
   imports: [
     BrowserModule,

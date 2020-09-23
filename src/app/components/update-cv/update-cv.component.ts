@@ -4,16 +4,16 @@ import { Personne } from 'src/app/models/personne';
 import { CvService } from '../cv.service';
 
 @Component({
-  selector: 'app-detail',
-  templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss']
+  selector: 'app-update-cv',
+  templateUrl: './update-cv.component.html',
+  styleUrls: ['./update-cv.component.scss']
 })
-export class DetailComponent implements OnInit {
-  personne: Personne;
+export class UpdateCvComponent implements OnInit {
+  personne: Personne = null;
 
   constructor(
-    private cvService: CvService,
     private activatedRoute: ActivatedRoute,
+    private cvService: CvService,
     private router: Router
   ) { }
 
@@ -29,21 +29,13 @@ export class DetailComponent implements OnInit {
     );
   }
 
-  deletePersonne() {
-    this.cvService.deletePersonne(this.personne.id).subscribe(
+  updatePersonne() {
+    this.cvService.updatePersonne(this.personne).subscribe(
       (res) => {
         const link = ['cv'];
         this.router.navigate(link);
-      },
-      (error) => {
-        console.log(error);
       }
     );
-  }
-
-  updatePersonne(id: number) {
-    const link = ['cv/updateCv', id];
-    this.router.navigate(link);
   }
 
 }

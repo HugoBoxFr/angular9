@@ -57,4 +57,8 @@ export class CvService {
   deletePersonne(id: number) {
     return this.http.delete(this.uri + `/${id}`);
   }
+
+  updatePersonne(personne: Personne) {
+    return this.http.put(this.uri, personne);
+  }
 }
