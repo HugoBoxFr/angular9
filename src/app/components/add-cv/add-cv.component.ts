@@ -9,6 +9,7 @@ import { CvService } from '../cv.service';
   styleUrls: ['./add-cv.component.scss']
 })
 export class AddCvComponent implements OnInit {
+  errorMessage: string = '';
 
   constructor(
     private cvService: CvService,
@@ -19,9 +20,16 @@ export class AddCvComponent implements OnInit {
   }
 
   addPersonne(formulaire: NgForm) {
-    const link = ['cv'];
-    this.cvService.addPersonne(formulaire.value);
-    this.router.navigate(link);
+    this.cvService.addPersonne(formulaire.value).subscribe(
+      (response) => {
+        const link = ['cv'];
+        this.router.navigate(link);
+      },
+      (error) => {
+        this.errorMessage = "Probleme de connexion à votre serveur. Consulter l'adminitrateur.";
+        console.log(error);
+      }
+    )
   }
 
 }
