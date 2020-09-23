@@ -12,7 +12,15 @@ export class AuthentificationService {
   ) { 
   }
 
+  isLogged() {
+    return !! localStorage.getItem('token');
+  }
+
   login(credentials) {
     return this.http.post(this.link, credentials);
+  }
+
+  logout() {
+    localStorage.removeItem('token');
   }
 }

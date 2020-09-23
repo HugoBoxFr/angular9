@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
     this.authService.login(credentials).subscribe(
       (res) => {
         const token = res.id;
-        console.log(token);
         const link = ['cv'];
         this.router.navigate(link);
         localStorage.setItem('token', token);

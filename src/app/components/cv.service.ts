@@ -30,18 +30,22 @@ export class CvService {
   }
 
   getPersonneById(id: number): Observable<Personne> {
+    // without api
     // const personne = this.personnes.find(pers => {
     //   return pers.id == id;
     // });
-
     // return personne;
+
     return this.http.get<Personne>(this.uri + `/${id}`);
   }
 
   addPersonne(personne: Personne): Observable<any> {
+    // without api
     // console.log(personne);
     // personne.id = this.personnes[this.personnes.length - 1].id + 1;
     // this.personnes.push(personne);
+
+    // without interceptor
     // const token = localStorage.getItem('token');
     // if (token) {
     //   const params = new HttpParams().set('access_token', token);

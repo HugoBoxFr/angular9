@@ -6,6 +6,8 @@ import { CvComponent } from './components/cv/cv.component';
 import { DeleteCvComponent } from './components/delete-cv/delete-cv.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { ErrorComponent } from './components/error/error.component';
+import { LoginGuard } from './guards/login.guard';
+import { LougoutGuard } from './guards/logout.guard';
 import { LoginComponent } from './login/login.component';
 
 
@@ -15,13 +17,13 @@ const routes: Routes = [
 
   { path:'cv', children: [
     { path:'', component: CvComponent },
-    { path:'delete/:id', component: DeleteCvComponent },
-    { path:'add', component: AddCvComponent },
+    { path:'delete/:id', component: DeleteCvComponent, canActivate: [LoginGuard] },
+    { path:'add', component: AddCvComponent, canActivate: [LoginGuard] },
     { path:':id', component: DetailComponent },
   ] },
   { path:'', component: CvComponent },
   { path: 'color/:default', component: ColorComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [LougoutGuard ] },
   { path: '**', component: ErrorComponent }
 ];
 
