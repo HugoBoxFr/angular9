@@ -17,7 +17,7 @@ export class CvComponent implements OnInit {
     this.cvService.getPersonnes().subscribe(
       (res) => {
         this.personnes = res;
-        console.log(res)      },
+      },
       (error) => {
         alert("Problème d'accès à l'api, fake données");
         this.personnes = this.cvService.getFakePersonnes();

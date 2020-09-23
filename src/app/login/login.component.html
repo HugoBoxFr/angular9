@@ -11,5 +11,5 @@
         Le mot de passe doit avoir au minimum 4 caractères.
     </div>
 
-    <button [disabled]="loginFormulaire.invalid" class="btn btn-primary" (click)="login(loginFormulaire)">Se connecter</button>
+    <button [disabled]="loginFormulaire.invalid" class="btn btn-primary" (click)="login(loginFormulaire.value)">Se connecter</button>
 </form>
